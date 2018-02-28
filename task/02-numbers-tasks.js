@@ -54,11 +54,13 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  var result = value1 + value2;
-  if (result === Infinity) {
-    return Infinity;
-  } else
-    return (value1 + value2)/2;
+   var result = Math.abs((Math.abs(value1) - Math.abs(value2))/2)
+   if (value1 != value2) {
+     return result;
+   }
+   else {
+     return value1;
+   }
 }
 
 /**
