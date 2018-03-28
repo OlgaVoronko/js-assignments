@@ -38,7 +38,16 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   throw new Error('Not implemented');
+   let result = [];
+   let i = 1;
+   (function returnResult() {
+     if (result.length < len) {
+       result.push(i);
+       i += 2;
+       returnResult();
+     }
+   })();
+   return result;
 }
 
 
@@ -331,7 +340,35 @@ function getSecondItems(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
-   throw new Error('Not implemented');
+   // throw new Error('Not implemented');
+   if (arr.length == 0) return arr;
+   arr.sort((a, b) => {
+     if (a < b) return -1;
+     else if (a > b) return 1;
+     else return 0;
+   });
+   arr = arr.filter((item, index, temp) => temp.indexOf(item) == index);
+   let tempArray = [];
+   switch (arr.length) {
+     case 0:
+      return arr;
+      break;
+    case 1:
+      tempArray.push(arr[0]);
+      tempArray.push(arr[0]);
+      tempArray.push(arr[0]);
+      break;
+    case 2:
+      tempArray.push(arr[1]);
+      tempArray.push(arr[0]);
+      break;
+   }
+   if (arr.length >= 3) {
+     tempArray.push(arr.pop());
+     tempArray.push(arr.pop());
+     tempArray.push(arr.pop());
+   }
+  return tempArray;
 }
 
 
@@ -416,7 +453,8 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-   throw new Error('Not implemented');
+   let tempArray = arr.filter(item => !item);
+   return tempArray.length;
 }
 
 /**
@@ -434,7 +472,8 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
-   throw new Error('Not implemented');
+   arr = arr.filter(i => i === item);
+   return arr.length;
 }
 
 /**
@@ -478,7 +517,19 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
 function sortCitiesArray(arr) {
-   throw new Error('Not implemented');
+   return arr.sort((a, b) => {
+     let countryA = a.country;
+     let countryB = b.country;
+     if (countryA < countryB) return -1;
+     else if (countryA > countryB) return 1
+     else {
+       let cityA = a.city;
+       let cityB = b.city;
+       if (cityA < cityB) return -1;
+       else if (cityA > cityB) return 1;
+       else return 0;
+     }
+   });
 }
 
 /**
@@ -517,7 +568,16 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+  let resultArray = [];
+  let i = start;
+  (function returnResult() {
+    if (i <= end) {
+      resultArray.push(i);
+      i++;
+      returnResult();
+    }
+  })();
+  return resultArray;
 }
 
 /**
