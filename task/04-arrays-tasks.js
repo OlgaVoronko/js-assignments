@@ -406,18 +406,20 @@ function getPositivesCount(arr) {
  */
 function sortDigitNamesByNumericOrder(arr) {
    throw new Error('Not implemented');
-   // let data = [['one', 1], ['two', 2], ['three', 3], ['four', 4], ['five', 5], ['six', 6], ['seven', 7],
-   //     ['eight', 8], ['nine', 9], ['zero', 0]];
-   // let length = 0;
-   // let i = 0;
+   // let data = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
    // let tempArray = [];
-   // (function returnResult(arr) {
-   //   if (length < arr.length) {
-   //     let tempData = data.filter(item => item == data[][0]);
-   //     tempArray.push(tempData[1]);
-   //     length++;
+   // let i = 0, j = 0;
+   // // let item = data[0];
+   // (function returnResult() {
+   //   if (tempArray.length != arr.length) {
+   //     if (data[i] == arr[j]) {
+   //       tempArray.push(i);
+   //       i++;
+   //       j++;
+   //     }
+   //     i++;
    //     returnResult(arr);
-   //   }
+   //   } else return tempArray;
    // })(arr);
    // return tempArray;
 }
@@ -550,6 +552,7 @@ function sortCitiesArray(arr) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
+
 function getIdentityMatrix(n) {
    throw new Error('Not implemented');
 }
